@@ -76,6 +76,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
+        //TODO: Add a row here to store score
       ],
     );
   }
