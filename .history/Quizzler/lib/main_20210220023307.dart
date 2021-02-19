@@ -64,7 +64,7 @@ class _QuizPageState extends State<QuizPage> {
               color: Colors.green,
               onPressed: () {
                 setState(() {
-                  if (questionNumber < questions.length - 1) {
+                  if (questionNumber < questions.length) {
                     questionNumber++;
                     scoreKeeper.add(
                       Icon(

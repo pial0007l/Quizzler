@@ -64,15 +64,12 @@ class _QuizPageState extends State<QuizPage> {
               color: Colors.green,
               onPressed: () {
                 setState(() {
-                  if (questionNumber < questions.length - 1) {
-                    questionNumber++;
-                    scoreKeeper.add(
-                      Icon(
-                        Icons.check,
-                        color: Colors.green,
-                      ),
-                    );
-                  }
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
                 });
               },
               child: Text(
@@ -89,13 +86,10 @@ class _QuizPageState extends State<QuizPage> {
               color: Colors.red,
               onPressed: () {
                 setState(() {
-                  if (questionNumber < questions.length - 1) {
-                    questionNumber++;
-                    scoreKeeper.add(Icon(
-                      Icons.close,
-                      color: Colors.red,
-                    ));
-                  }
+                  scoreKeeper.add(Icon(
+                    Icons.close,
+                    color: Colors.red,
+                  ));
                 });
               },
               child: Text(

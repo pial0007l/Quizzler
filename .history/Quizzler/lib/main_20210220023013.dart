@@ -66,13 +66,13 @@ class _QuizPageState extends State<QuizPage> {
                 setState(() {
                   if (questionNumber < questions.length - 1) {
                     questionNumber++;
-                    scoreKeeper.add(
-                      Icon(
-                        Icons.check,
-                        color: Colors.green,
-                      ),
-                    );
                   }
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
                 });
               },
               child: Text(
