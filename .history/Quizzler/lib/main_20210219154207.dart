@@ -29,9 +29,7 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Icon> scoreKeeper = [];
-  List<String> questions = [
-    'You can lead a cow ',
-  ];
+  List<String> questions = ['You can lead a cow '];
   @override
   Widget build(BuildContext context) {
     return Column(
