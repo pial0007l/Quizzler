@@ -36,23 +36,15 @@ class _QuizPageState extends State<QuizPage> {
   void checkAnswer(bool userPickedAnswer) {
     bool correctAnswer = quizbrain.getAnswer();
 
+    if (userPickedAnswer == correctAnswer) {}
     setState(() {
-      if (userPickedAnswer == correctAnswer) {
-        scoreKeeper.add(
-          Icon(
-            Icons.check,
-            color: Colors.green,
-          ),
-        );
-      } else {
-        scoreKeeper.add(
-          Icon(
-            Icons.close,
-            color: Colors.red,
-          ),
-        );
-      }
       quizbrain.nextQuestion();
+      // scoreKeeper.add(
+      //   Icon(
+      //     Icons.check,
+      //     color: Colors.green,
+      //   ),
+      // );
     });
   }
 
@@ -83,9 +75,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(15.0),
             child: FlatButton(
               color: Colors.green,
-              onPressed: () {
-                checkAnswer(true);
-              },
+              onPressed: () {},
               child: Text(
                 'True',
                 style: TextStyle(fontSize: 20.0, color: Colors.white),
@@ -99,7 +89,14 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.red,
               onPressed: () {
-                checkAnswer(false);
+                setState(() {
+                  quizbrain.nextQuestion();
+
+                  // scoreKeeper.add(Icon(
+                  //   Icons.close,
+                  //   color: Colors.red,
+                  // ));
+                });
               },
               child: Text(
                 'False',

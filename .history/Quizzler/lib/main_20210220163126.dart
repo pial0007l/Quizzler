@@ -36,23 +36,15 @@ class _QuizPageState extends State<QuizPage> {
   void checkAnswer(bool userPickedAnswer) {
     bool correctAnswer = quizbrain.getAnswer();
 
+    if (userPickedAnswer == correctAnswer) {}
     setState(() {
-      if (userPickedAnswer == correctAnswer) {
-        scoreKeeper.add(
-          Icon(
-            Icons.check,
-            color: Colors.green,
-          ),
-        );
-      } else {
-        scoreKeeper.add(
-          Icon(
-            Icons.close,
-            color: Colors.red,
-          ),
-        );
-      }
       quizbrain.nextQuestion();
+      // scoreKeeper.add(
+      //   Icon(
+      //     Icons.check,
+      //     color: Colors.green,
+      //   ),
+      // );
     });
   }
 
