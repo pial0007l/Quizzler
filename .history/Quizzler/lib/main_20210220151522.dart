@@ -1,6 +1,7 @@
 import 'package:Quizzler/question.dart';
 import 'package:flutter/material.dart';
 
+
 void main() {
   runApp(MyApp());
 }
@@ -43,10 +44,8 @@ class _QuizPageState extends State<QuizPage> {
   // ];
 
   List<Question> questionBank = [
-    Question(q: 'You can lead a cow down stairs but not up stairs.', a: false),
-    Question(
-        q: 'Approximately one quarter of human bones are in the feet.',
-        a: true),
+    Question(q: 'You can lead a cow down stairs but not up stairs.',a: false),
+    Question(q: 'Approximately one quarter of human bones are in the feet.', a: true),
     Question(q: 'A slug\'s blood is green.', a: false),
   ];
   @override
@@ -77,15 +76,18 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.green,
               onPressed: () {
+
                 bool correctAnswer = questionBank[questionNumber].answerText;
                 setState(() {
-                  questionNumber++;
-                  scoreKeeper.add(
-                    Icon(
-                      Icons.check,
-                      color: Colors.green,
-                    ),
-                  );
+                  
+                    questionNumber++;
+                    scoreKeeper.add(
+                      Icon(
+                        Icons.check,
+                        color: Colors.green,
+                      ),
+                    );
+                  }
                 });
               },
               child: Text(
@@ -102,12 +104,13 @@ class _QuizPageState extends State<QuizPage> {
               color: Colors.red,
               onPressed: () {
                 setState(() {
-                  questionNumber++;
-
-                  // scoreKeeper.add(Icon(
-                  //   Icons.close,
-                  //   color: Colors.red,
-                  // ));
+                  if (questionNumber < questions.length - 1) {
+                    questionNumber++;
+                    scoreKeeper.add(Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ));
+                  }
                 });
               },
               child: Text(

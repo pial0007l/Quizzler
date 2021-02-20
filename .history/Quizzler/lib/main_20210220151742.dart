@@ -103,11 +103,12 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 setState(() {
                   questionNumber++;
-
-                  // scoreKeeper.add(Icon(
-                  //   Icons.close,
-                  //   color: Colors.red,
-                  // ));
+                  if (questionNumber < questions.length - 1) {
+                    scoreKeeper.add(Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ));
+                  }
                 });
               },
               child: Text(
