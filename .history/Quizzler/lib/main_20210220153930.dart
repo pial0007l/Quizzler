@@ -56,7 +56,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                quizbrain.questionBank[questionNumber].questionText,
+                questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -72,8 +72,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.green,
               onPressed: () {
-                bool correctAnswer =
-                    quizbrain.questionBank[questionNumber].answerText;
+                bool correctAnswer = questionBank[questionNumber].answerText;
                 setState(() {
                   questionNumber++;
                   scoreKeeper.add(

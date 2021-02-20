@@ -72,8 +72,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.green,
               onPressed: () {
-                bool correctAnswer =
-                    quizbrain.questionBank[questionNumber].answerText;
+                bool correctAnswer = questionBank[questionNumber].answerText;
                 setState(() {
                   questionNumber++;
                   scoreKeeper.add(
