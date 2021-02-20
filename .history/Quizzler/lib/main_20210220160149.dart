@@ -71,7 +71,7 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.green,
               onPressed: () {
-                bool correctAnswer = quizbrain.getAnswer();
+                bool correctAnswer = quizbrain.getAnswer(questionNumber);
                 setState(() {
                   quizbrain.nextQuestion();
                   // scoreKeeper.add(
@@ -96,7 +96,7 @@ class _QuizPageState extends State<QuizPage> {
               color: Colors.red,
               onPressed: () {
                 setState(() {
-                  quizbrain.nextQuestion();
+                  questionNumber++;
 
                   // scoreKeeper.add(Icon(
                   //   Icons.close,
