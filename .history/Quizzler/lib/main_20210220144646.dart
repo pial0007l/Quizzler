@@ -68,17 +68,15 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.green,
               onPressed: () {
-
-                bool correctAnswer = answers[questionNumber];
                 setState(() {
-                  
+                  if (questionNumber < questions.length - 1) {
                     questionNumber++;
-                    // scoreKeeper.add(
-                    //   Icon(
-                    //     Icons.check,
-                    //     color: Colors.green,
-                    //   ),
-                    // );
+                    scoreKeeper.add(
+                      Icon(
+                        Icons.check,
+                        color: Colors.green,
+                      ),
+                    );
                   }
                 });
               },

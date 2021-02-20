@@ -68,8 +68,6 @@ class _QuizPageState extends State<QuizPage> {
             child: FlatButton(
               color: Colors.green,
               onPressed: () {
-
-                bool correctAnswer = answers[questionNumber];
                 setState(() {
                   
                     questionNumber++;
