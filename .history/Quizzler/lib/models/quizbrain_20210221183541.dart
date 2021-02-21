@@ -32,26 +32,12 @@ class QuizBrain {
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
   ];
-  void nextQuestion(context) {
+  void nextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     } else {
-      Alert(
-        context: context,
-        type: AlertType.error,
-        title: "RFLUTTER ALERT",
-        desc: "Flutter is more awesome with RFlutter Alert.",
-        buttons: [
-          DialogButton(
-            child: Text(
-              "COOL",
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            onPressed: () => Navigator.pop(context),
-            width: 120,
-          )
-        ],
-      ).show();
+      Alert(context: context, title: "RFLUTTER", desc: "Flutter is awesome.")
+          .show();
     }
   }
 
