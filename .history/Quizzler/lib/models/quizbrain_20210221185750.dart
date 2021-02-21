@@ -38,7 +38,7 @@ class QuizBrain {
     } else {
       Alert(
         context: context,
-        type: AlertType.success,
+        type: AlertType.error,
         title: "FINISHED",
         desc: "Please close to reset Quiz.",
         buttons: [
@@ -47,14 +47,11 @@ class QuizBrain {
               "CLOSE",
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
+            onPressed: () => Navigator.pop(context),
             width: 120,
           )
         ],
       ).show();
-      _questionNumber = 0;
     }
   }
 
@@ -64,9 +61,5 @@ class QuizBrain {
 
   bool getAnswer() {
     return _questionBank[_questionNumber].answerText;
-  }
-
-  int getQuestioNumber() {
-    return _questionNumber;
   }
 }

@@ -114,7 +114,6 @@ class _QuizPageState extends State<QuizPage> {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: scoreKeeper,
         )
       ],

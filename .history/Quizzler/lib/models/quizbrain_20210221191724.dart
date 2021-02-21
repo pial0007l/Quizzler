@@ -36,6 +36,7 @@ class QuizBrain {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
     } else {
+      _questionNumber = 0;
       Alert(
         context: context,
         type: AlertType.success,
@@ -54,7 +55,6 @@ class QuizBrain {
           )
         ],
       ).show();
-      _questionNumber = 0;
     }
   }
 

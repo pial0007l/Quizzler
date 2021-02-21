@@ -38,7 +38,7 @@ class _QuizPageState extends State<QuizPage> {
 
     setState(() {
       int num = quizbrain.getQuestioNumber();
-      if (num == 12) {
+      if (num == 0) {
         scoreKeeper = [];
       } else {
         if (userPickedAnswer == correctAnswer) {
@@ -114,7 +114,6 @@ class _QuizPageState extends State<QuizPage> {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: scoreKeeper,
         )
       ],

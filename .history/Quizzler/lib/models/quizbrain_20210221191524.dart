@@ -49,12 +49,12 @@ class QuizBrain {
             ),
             onPressed: () {
               Navigator.pop(context);
+              _questionNumber = 0;
             },
             width: 120,
           )
         ],
       ).show();
-      _questionNumber = 0;
     }
   }
 

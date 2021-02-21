@@ -38,24 +38,23 @@ class _QuizPageState extends State<QuizPage> {
 
     setState(() {
       int num = quizbrain.getQuestioNumber();
-      if (num == 12) {
+      if (num == 0) {
         scoreKeeper = [];
+      }
+      if (userPickedAnswer == correctAnswer) {
+        scoreKeeper.add(
+          Icon(
+            Icons.check,
+            color: Colors.green,
+          ),
+        );
       } else {
-        if (userPickedAnswer == correctAnswer) {
-          scoreKeeper.add(
-            Icon(
-              Icons.check,
-              color: Colors.green,
-            ),
-          );
-        } else {
-          scoreKeeper.add(
-            Icon(
-              Icons.close,
-              color: Colors.red,
-            ),
-          );
-        }
+        scoreKeeper.add(
+          Icon(
+            Icons.close,
+            color: Colors.red,
+          ),
+        );
       }
       quizbrain.nextQuestion(context);
     });
@@ -114,7 +113,6 @@ class _QuizPageState extends State<QuizPage> {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: scoreKeeper,
         )
       ],

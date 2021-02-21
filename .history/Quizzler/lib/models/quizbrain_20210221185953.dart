@@ -48,13 +48,14 @@ class QuizBrain {
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
             onPressed: () {
+              _questionNumber = 0;
+
               Navigator.pop(context);
             },
             width: 120,
           )
         ],
       ).show();
-      _questionNumber = 0;
     }
   }
 
@@ -64,9 +65,5 @@ class QuizBrain {
 
   bool getAnswer() {
     return _questionBank[_questionNumber].answerText;
-  }
-
-  int getQuestioNumber() {
-    return _questionNumber;
   }
 }
